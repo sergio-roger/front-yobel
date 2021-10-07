@@ -1,0 +1,13 @@
+Options All -Indexes
+
+<IfModule mod_rewrite.c>
+# Activar rewrite
+RewriteEngine on
+#ErrorDocument 404 http://localhost/back_yobel/
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^([a-zA-Z0-9.-_/]+)$ index.php?url=$1
+
+</IfModule>
